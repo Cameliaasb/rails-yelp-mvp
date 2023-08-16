@@ -15,7 +15,8 @@ Restaurant.destroy_all
   Restaurant.create!(
     name: Faker::Restaurant.name,
     address: Faker::Address.full_address,
-    category: Restaurant::CATEGORIES.sample
+    category: Restaurant::CATEGORIES.sample,
+    phone_number: Faker::PhoneNumber.cell_phone
   )
   puts 'added one restaurant'
 end

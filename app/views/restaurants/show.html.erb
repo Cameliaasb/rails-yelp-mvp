@@ -1,13 +1,30 @@
 <div class="container">
 
   <h1> <%= @restaurant.name %> </h1>
-  <p> <strong> <%= @restaurant.category %> </strong></p>
-  <p> <em> <%= @restaurant.address %> </em> </p>
+  <p> <strong> Category: </strong> <%= @restaurant.category %> </p>
+  <p> <strong> Find us: </strong>  <%= @restaurant.address %> </p>
+  <p> <strong> Call us at: </strong>  <%= @restaurant.phone_number %> </p>
 
+
+    <% @restaurant.reviews.each do |review|  %>
+      <div class="my-3 p-2 bg-light d-flex justify-content-between">
+        <strong><%= review.content %></strong>
+        Rating: <%= review.rating %>/5
+      </div>
+    <% end %>
 
     <div class="mb-2">
-      <%= link_to restaurants_path do %>
-      <%= "Return to list" %>
+      <%= link_to new_restaurant_review_path(@restaurant), class:"btn btn-dark" do %>        <%= "Add a review" %>
       <% end  %>
     </div>
+
+    <div class="mb-2">
+      <%= link_to restaurants_path, class:"btn btn-dark" do %>
+      <%= " < Return to list" %>
+      <% end  %>
+    </div>
+
+
+
+
 </div>

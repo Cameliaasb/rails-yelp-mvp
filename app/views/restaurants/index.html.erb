@@ -1,13 +1,21 @@
 <div class="container">
 
-  <h1>Restaurants </h1>
+  <h1 class="mb-3">Restaurants </h1>
 
   <% @restaurants.each do |restaurant|  %>
-    <div class="mb-2">
-      <%= link_to restaurant_path(restaurant) do %>
-      <%= restaurant.name %>
+    <div class="mb-3 p-2 bg-light">
+    <strong>
+      <%= link_to restaurant_path(restaurant), class:"text-decoration-none text-dark" do %>
+        <%= restaurant.name %>
       <% end  %>
+    </strong>
     </div>
   <% end %>
+
+   <div class="mb-2">
+      <%= link_to new_restaurant_path, class:"btn btn-dark" do %>
+      <%= "Add a new restaurant" %>
+      <% end  %>
+    </div>
 
 </div>

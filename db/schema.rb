@@ -22,7 +22,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_16_095234) do
 
   create_table "reviews", force: :cascade do |t|
     t.string "content"
-    # A review’s rating must be an integer.
     t.integer "rating"
     t.integer "restaurant_id", null: false
     t.datetime "created_at", null: false
